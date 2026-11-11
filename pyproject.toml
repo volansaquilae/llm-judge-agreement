@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-judge-agreement"
+version = "1.0.0"
+description = "Check an LLM judge against human labels, with TPR, TNR, Cohen's kappa and a corrected pass rate."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Volans Aquilae", email = "info@volansaquilae.com" }]
+keywords = ["llm", "llm-as-a-judge", "evals", "ai-agents", "calibration", "cohen-kappa", "evaluation"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://www.volansaquilae.com/guides/llm-as-a-judge-calibration/"
+Documentation = "https://www.volansaquilae.com/guides/llm-as-a-judge-calibration/"
+"Volans Aquilae" = "https://www.volansaquilae.com/"
+Source = "https://github.com/volansaquilae/llm-judge-agreement"
+
+[project.scripts]
+llm-judge-agreement = "llm_judge_agreement:main"
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE", "pyproject.toml"]
